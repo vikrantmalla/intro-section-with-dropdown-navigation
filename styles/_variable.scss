@@ -1,0 +1,17 @@
+/*Color */
+
+
+/*Neutral Color */
+
+$colorAlmostWhite: hsl(0, 0%, 98%);
+$colorMediumGray: hsl(0, 0%, 41%);
+$colorAlmostBlack: hsl(0, 0%, 8%);
+
+/*mixin */
+
+@mixin flex($direction, $justify) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: center;
+}

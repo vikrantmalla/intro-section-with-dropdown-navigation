@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="stylesheet" type="text/css" href="./styles/style.css">
+    <title>Frontend Mentor | Intro section with dropdown navigation</title>
+
+</head>
+
+<body>
+    <main>
+        <nav>
+            <header class="navbar-header">
+                <a href="#" aria-label="logo">
+                    <img src="images/logo.svg" alt="logo" />
+                </a>
+                <button class="hambuger-btn">
+                    <img class="hambuger" src="images/icon-menu.svg" alt="menu" />
+                </button>
+            </header>
+            <div class="navbar-list">
+                <ul class="navbar_link">
+                    <li>
+                        <a href="#">Features</a>
+                    </li>
+                    <li>
+                        <a href="#">Company</a>
+                    </li>
+                    <li>
+                        <a href="#">Careers</a>
+                    </li>
+                    <li>
+                        <a href="#">About</a>
+                    </li>
+                </ul>
+                <ul class="navbar_auth">
+                    <li>
+                        <a href="#">Login</a>
+                    </li>
+                    <li>
+                        <button class="btn"> <a href="#">Register</a></button>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <section class="content">
+            <div class="image-container">
+                <picture className="img-holder">
+                    <source media="(max-width: 480px)" srcset="images/image-hero-mobile.png" />
+                    <img src="images/image-hero-desktop.png" alt="hero-img" />
+                </picture>
+            </div>
+            <div class="content-container">
+                <h1>Make remote work</h1>
+                <p>Get your team in sync, no matter your location. Streamline processes, create team rituals, and watch productivity soar.</p>
+                <button>Learn More</button>
+                <div class="content-sponsors">
+                    <img src="images/client-databiz.svg" class="content__sponsors__image" alt="Databiz">
+                    <img src="images/client-audiophile.svg" class="content__sponsors__image" alt="Audiophile">
+                    <img src="images/client-meet.svg" class="content__sponsors__image" alt="Meet">
+                    <img src="images/client-maker.svg" class="content__sponsors__image" alt="Maker">
+                </div>
+            </div>
+
+        </section>
+    </main>
+</body>
+
+</html>

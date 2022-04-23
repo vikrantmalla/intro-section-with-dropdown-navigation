@@ -1,0 +1,61 @@
+.content {
+    @include flex(column, center);
+    @media (min-width: 62em) {
+        @include flex(row-reverse, space-around);
+    }
+    .image-container {
+        img {
+            width: 100%;
+            max-width: 430px;
+        }
+    }
+    .content-container {
+        @include flex(column, center);
+        gap: 1rem;
+        margin: 2rem 0 4rem 0;
+        padding: 0 1rem;
+        width: 100%;
+        max-width: 500px;
+        @media (min-width: 62em) {
+            align-items: flex-start;
+            margin: 0;
+            gap: 2.5rem;
+        }
+        h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            @media (min-width: 62em) {
+                font-size: 4.4rem;
+                text-align: left;
+            }
+        }
+        p {
+            text-align: center;
+            line-height: 1.5rem;
+            @media (min-width: 62em) {
+                text-align: left;
+                padding-right: 1.5rem;
+            }
+        }
+        button {
+            padding: 0.8rem 1.5rem;
+            background-color: $colorAlmostBlack;
+            border-radius: 0.5rem;
+            color: $colorAlmostWhite;
+            border: none;
+            &:hover {
+                background-color: $colorAlmostWhite;
+                color: $colorAlmostBlack;
+                border: 1px solid $colorAlmostBlack;
+            }
+        }
+        .content-sponsors {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.8rem;
+            justify-items: center;
+            padding: 0 0.8rem;
+            margin-top: 1.5rem;
+        }
+    }
+}
