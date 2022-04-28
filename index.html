@@ -19,17 +19,56 @@
                 <a href="#" aria-label="logo">
                     <img src="images/logo.svg" alt="logo" />
                 </a>
-                <button class="hambuger-btn">
-                    <img class="hambuger" src="images/icon-menu.svg" alt="menu" />
+                <button class="hambuger-btn" id="toggle">
+                    <img class="hambuger" id="hamburger-icon" src="images/icon-menu.svg" alt="menu" />
                 </button>
             </header>
-            <div class="navbar-list">
-                <ul class="navbar_link">
-                    <li>
-                        <a href="#">Features</a>
+            <div class="navbar-list" id="navbar-list">
+                <ul class="navbar_link" id="navbar-menu">
+                    <li class="navbar__list__item">
+                        <a href="#" class="dropdown">
+                            Features
+                            <img class="arrow-icon" src="images/icon-arrow-down.svg" alt="Arrow down">
+                        </a>
+                        <ul class="navbar__list__item__dropdown">
+                            <li>
+                                <a href="#">
+                                    <img src="images/icon-todo.svg" alt="Todo"> Todo List
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/icon-calendar.svg" alt="Calendar"> Calendar
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/icon-reminders.svg" alt="Reminders"> Reminders
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/icon-planning.svg" alt="Planning"> Planning
+                                </a>
+                            </li>
+                        </ul>
                     </li>
-                    <li>
-                        <a href="#">Company</a>
+                    <li class="navbar__list__item">
+                        <a href="#" class="dropdown">
+                            Company
+                            <img class="arrow-icon" src="images/icon-arrow-down.svg" alt="Arrow down">
+                        </a>
+                        <ul class="navbar__list__item__dropdown">
+                            <li>
+                                <a href="#">History</a>
+                            </li>
+                            <li>
+                                <a href="#">Our Team</a>
+                            </li>
+                            <li>
+                                <a href="#">Blog</a>
+                            </li>
+                        </ul>
                     </li>
                     <li>
                         <a href="#">Careers</a>
@@ -66,9 +105,9 @@
                     <img src="images/client-maker.svg" class="content__sponsors__image" alt="Maker">
                 </div>
             </div>
-
         </section>
     </main>
+    <script src="script.js"></script>
 </body>
 
 </html>

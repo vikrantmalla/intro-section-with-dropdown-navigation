@@ -2,10 +2,11 @@
     @include flex(column, center);
     @media (min-width: 62em) {
         @include flex(row-reverse, space-around);
+        margin: 5.5rem 2rem 0;
     }
     .image-container {
         img {
-            width: 100%;
+            width: 85%;
             max-width: 430px;
         }
     }

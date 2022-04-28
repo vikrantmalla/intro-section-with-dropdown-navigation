@@ -37,6 +37,7 @@ nav .navbar-header {
 nav .navbar-header .hambuger-btn {
   background-color: transparent;
   border: none;
+  z-index: 2;
 }
 
 @media (min-width: 62em) {
@@ -60,11 +61,33 @@ nav .navbar-list {
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
-  margin: 0 3rem;
 }
 
 nav .navbar-list .navbar_link {
+  position: fixed;
+  right: 0;
+  top: 0;
+  background-color: #fafafa;
+  height: 100vh;
+  width: 60vw;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 4rem 0.5rem;
   display: none;
+}
+
+nav .navbar-list .navbar_link.opened {
+  display: block;
+}
+
+nav .navbar-list .navbar_link .navbar__list__item__dropdown {
+  display: none;
+}
+
+nav .navbar-list .navbar_link .navbar__list__item__dropdown.opened {
+  display: block;
 }
 
 @media (min-width: 62em) {
@@ -76,28 +99,93 @@ nav .navbar-list .navbar_link {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 3rem;
+    list-style: none;
+    position: unset;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    margin-left: 3rem;
+    padding: 0;
+    background-color: transparent;
+  }
+  nav .navbar-list .navbar_link .navbar__list__item {
+    position: relative;
+    list-style: none;
+    padding-top: 1rem;
+    margin-left: 1rem;
+  }
+}
+
+@media (min-width: 62em) and (min-width: 62em) {
+  nav .navbar-list .navbar_link .navbar__list__item {
+    padding-top: 0;
+    margin-left: 0;
+  }
+}
+
+@media (min-width: 62em) {
+  nav .navbar-list .navbar_link .navbar__list__item .navbar__list__item__dropdown {
+    display: none;
+    background-color: #fafafa;
+    list-style: none;
+    position: absolute;
+    width: 8rem;
+    font-size: 0.8rem;
+    top: 2rem;
+    left: -45px;
+    padding: 1rem;
+    border-radius: 0.4rem;
+    -webkit-box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  }
+  nav .navbar-list .navbar_link .navbar__list__item .navbar__list__item__dropdown.opened {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    gap: 2rem;
-    list-style: none;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    gap: 0.5rem;
   }
-  nav .navbar-list .navbar_link li a {
-    text-decoration: none;
-    color: dimgray;
-  }
-  nav .navbar-list .navbar_link li:nth-child(1)::after {
-    content: url(../images/icon-arrow-down.svg);
-    float: right;
-    padding-left: 0.5rem;
-  }
-  nav .navbar-list .navbar_link li:nth-child(2)::after {
-    content: url(../images/icon-arrow-down.svg);
-    float: right;
-    padding-left: 0.5rem;
+}
+
+nav .navbar-list .navbar_link li {
+  list-style: none;
+  padding-top: 1rem;
+  margin-left: 1rem;
+  text-align: left;
+}
+
+nav .navbar-list .navbar_link li a {
+  color: #141414;
+  text-decoration: none;
+}
+
+nav .navbar-list .navbar_link li a img {
+  margin-right: 0.5rem;
+}
+
+@media (min-width: 62em) {
+  nav .navbar-list .navbar_link li {
+    padding-top: 0;
+    margin-left: 0;
   }
 }
 
@@ -166,11 +254,12 @@ nav .navbar-list .navbar_auth li button {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    margin: 5.5rem 2rem 0;
   }
 }
 
 .content .image-container img {
-  width: 100%;
+  width: 85%;
   max-width: 430px;
 }
 
@@ -265,6 +354,7 @@ nav .navbar-list .navbar_auth li button {
 body {
   width: 100%;
   height: 100%;
+  background-color: #fafafa;
 }
 
 main {

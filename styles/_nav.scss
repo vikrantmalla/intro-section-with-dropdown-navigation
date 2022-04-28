@@ -10,6 +10,7 @@ nav {
         .hambuger-btn {
             background-color: transparent;
             border: none;
+            z-index: 2;
             .hambuger {
                 @media (min-width: 62em) {
                     display: none;
@@ -20,32 +21,80 @@ nav {
     .navbar-list {
         @include flex(row, space-between);
         width: 100%;
-        margin: 0 3rem;
         .navbar_link {
+            position: fixed;
+            right: 0;
+            top: 0;
+            background-color: $colorAlmostWhite;
+            height: 100vh;
+            width: 60vw;
+            flex-direction: column;
+            padding: 4rem 0.5rem;
             display: none;
+            &.opened {
+                display: block;
+            }
+            .navbar__list__item__dropdown {
+                display: none;
+                &.opened {
+                    display: block;
+                }
+            }
             @media (min-width: 62em) {
-                @include flex(row, center);
-                gap: 2rem;
+                @include flex(row, flex-start);
+                gap: 3rem;
                 list-style: none;
-                li {
-                    a {
-                        text-decoration: none;
-                        color: $colorMediumGray;
+                position: unset;
+                height: fit-content;
+                margin-left: 3rem;
+                padding: 0;
+                background-color: transparent;
+                .navbar__list__item {
+                    position: relative;
+                    list-style: none;
+                    padding-top: 1rem;
+                    margin-left: 1rem;
+                    @media (min-width: 62em) {
+                        padding-top: 0;
+                        margin-left: 0;
                     }
-                    &:nth-child(1) {
-                        &::after {
-                            content: url(../images/icon-arrow-down.svg);
-                            float: right;
-                            padding-left: 0.5rem;
+                    // for two li class name  .navbar__list__item
+                    .navbar__list__item__dropdown {
+                        display: none;
+                        background-color: $colorAlmostWhite;
+                        list-style: none;
+                        position: absolute;
+                        width: 8rem;
+                        font-size: 0.8rem;
+                        top: 2rem;
+                        left: -45px;
+                        padding: 1rem;
+                        border-radius: 0.4rem;
+                        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+                        &.opened {
+                            @include flex(column, center);
+                            align-items: flex-start;
+                            gap: 0.5rem;
                         }
                     }
-                    &:nth-child(2) {
-                        &::after {
-                            content: url(../images/icon-arrow-down.svg);
-                            float: right;
-                            padding-left: 0.5rem;
-                        }
+                }
+            }
+            // for other li
+            li {
+                list-style: none;
+                padding-top: 1rem;
+                margin-left: 1rem;
+                text-align: left;
+                a {
+                    color: $colorAlmostBlack;
+                    text-decoration: none;
+                    img {
+                        margin-right: 0.5rem;
                     }
+                }
+                @media (min-width: 62em) {
+                    padding-top: 0;
+                    margin-left: 0;
                 }
             }
         }
