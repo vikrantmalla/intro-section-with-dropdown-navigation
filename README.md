@@ -25,7 +25,7 @@ This is a solution to the [Intro section with dropdown navigation challenge on F
 <img src="./design/Screenshot1.png"  width="800"/>
 <img src="./design/Screenshot2.png"  width="800"/>
 
-<img src="./design/Screenshot3.png"  width="250"/> | <img src="./design/Screenshot3.png"  width="250"/>
+<img src="./design/Screenshot3.png"  width="250"/> | <img src="./design/Screenshot4.png"  width="250"/>
 
 ### Links
 
